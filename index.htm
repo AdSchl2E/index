@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adam Schlee</title>
+        <link rel="icon" href="img/Icon.png">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <section id="navbar" class="notfixed light">
+            <div class="container">
+                <nav>
+                    <a href='#' class="logo-container">
+                        <img id="logo" src="img/Logo Adam 2.png">
+                    </a>
+                    <ul>
+                        <li><a href="#header">ACCUEIL</a></li>
+                        <li><a href="#projets">PROJETS</a></li>
+                        <li><a href="#contacts">CONTACTS</a></li>
+                        <li>
+                            <img id="DarkMode" src="img/DarkMode.png" title="Passer au thème sombre" onclick="enableDarkMode();">
+                            <img id="LightMode" class="enable" src="img/LightMode.png" title="Passer au thème clair" onclick="disableDarkMode();">
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <section id="header">
+            <img src="img/TokyoAtNight.jpg" class="bg">
+            <div class="container">
+                <h1>Adam Schlee</h1>
+                <p>Un petit blog sur lequel je regroupe mes diff&eacute;rents projets.</p>
+            </div>
+        </section>
+
+        <section id="projets" class="light">
+            <div class="container">
+                <h1>PROJETS</h1>
+                <div class="card-container">
+                    <a class="card" href="http://pokeanalyser.000webhostapp.com">
+                        <p>Pok&eacute; Analyser
+                            <span>
+                                Le plus abouti de mes projets. Un site en anglais sur lequel je donne des informations sur les Pokémons et leurs statistiques (top 10, graphique, Pokédex, etc...)
+                            </span>
+                        </p>
+                        <img src="img/Rqz.png" class="bg">
+                    </a>
+                    <a class="card" href="http://lmbmap.000webhostapp.com">
+                        <p>LMBMap
+                            <span>
+                                Une application adaptée pour mobile, servant de GPS dans le lycée Marc Bloch. Elle donne le chemin le plus court entre une salle et une autre.
+                            </span>
+                        </p>
+                        <img style="object-position: top;" src="img/LMBMap.png" class="bg">
+                    </a>
+                    <a class="card" href="http://swordless-substitut.000webhostapp.com/">
+                        <p>Tank Analyser
+                            <span>
+                                Un site, fait en collaboration avec un ami où j'ai fait la partie web-design, sur lequel est donné des informations sur des chars de l'époque (1ère et 2e GM). Il n'a pas pu être abouti à 100%...
+                            </span>
+                        </p>
+                        <img src="img/TankAnalyser.jpg" class="bg">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts" class="light">
+            <div class="container">
+                <h1>CONTACTS</h1>
+                <p><a><img src="img/Email.png"></a>ad.schlee@gmail.com</p>
+                <p><a href="https://www.facebook.com/adam.schlee.7"><img src="img/Facebook.png"></a>Adam Schlee</p>
+                <p><a href="https://www.instagram.com/ad_schl2e"><img src="img/Instagram.png"></a>ad_schl2e</p>
+                <p><a href="https://twitter.com/Ad_Schl2e"><img src="img/Twitter.png"></a>Ad_Schl2e</p>
+                
+            </div>
+        </section>
+
+        <section id="footer">
+            <div class="container">
+                <p>Copyrigth 2021 <b>Adam Schlee</b>. All right reserved.</p>
+            </div>
+        </section>
+    </body>
+    <script>
+        window.onscroll = function(){
+            var navbar = document.getElementById("navbar")
+            if (window.pageYOffset >= 750){
+                navbar.classList.add("fixed");
+                navbar.classList.remove("notfixed");
+            } else {
+                navbar.classList.remove("fixed");
+                navbar.classList.add("notfixed");
+            }
+        }
+
+        function enableDarkMode(){
+            var DarkMode = document.getElementById("DarkMode");
+            var LightMode = document.getElementById("LightMode");
+            var Logo = document.getElementById("logo");
+            var ElementsChangeCouleur = [document.getElementById("navbar"),document.getElementById("projets"),document.getElementById("contacts")];
+            for (var i = 0; i < ElementsChangeCouleur.length; i++){
+                console.log(ElementsChangeCouleur[i],i,ElementsChangeCouleur.length)
+                ElementsChangeCouleur[i].classList.replace("light","dark");
+            }
+            DarkMode.classList.add("enable"); 
+            LightMode.classList.remove("enable");
+            Logo.src = "img/Logo Adam 1.png";
+        }
+
+        function disableDarkMode(){
+            var DarkMode = document.getElementById("DarkMode");
+            var LightMode = document.getElementById("LightMode");
+            var Logo = document.getElementById("logo");
+            var ElementsChangeCouleur = [document.getElementById("navbar"),document.getElementById("projets"),document.getElementById("contacts")];
+            for (var i = 0; i < ElementsChangeCouleur.length; i++){
+                ElementsChangeCouleur[i].classList.replace("dark","light");
+            }
+            LightMode.classList.add("enable"); 
+            DarkMode.classList.remove("enable");
+            Logo.src = "img/Logo Adam 2.png";
+        }
+        
+    </script>
+</html>
